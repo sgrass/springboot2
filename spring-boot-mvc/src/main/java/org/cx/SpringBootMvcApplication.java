@@ -8,11 +8,17 @@ import org.springframework.boot.autoconfigure.web.servlet.error.ErrorMvcAutoConf
 import org.springframework.boot.web.server.ErrorPage;
 import org.springframework.boot.web.server.ErrorPageRegistrar;
 import org.springframework.boot.web.server.ErrorPageRegistry;
+import org.springframework.boot.web.servlet.ServletComponentScan;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.servlet.config.annotation.InterceptorRegistry;
 import org.springframework.web.servlet.config.annotation.WebMvcConfigurerAdapter;
 
+/**
+ * ServletComponentScan扫描异步servlet
+ *
+ */
 @SpringBootApplication
+@ServletComponentScan("org.cx.asyncweb")
 public class SpringBootMvcApplication extends WebMvcConfigurerAdapter implements ErrorPageRegistrar {
 
 	public static void main(String[] args) {
